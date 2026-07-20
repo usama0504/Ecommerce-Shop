@@ -6,7 +6,7 @@ const { cart, totalBill, discount, finalAmount, decreaseQuantity, addToCart, cle
 
 <template>
   <div class="max-w-4xl mx-auto py-6 px-3 sm:px-4">
-    <!-- Header (Centered on large screens, left-aligned on mobile) -->
+   
     <h1
       class="text-2xl sm:text-3xl font-black mb-6 sm:mb-8 text-center md:text-center text-zinc-900 dark:text-zinc-100">
       🛒 Your Cart</h1>
@@ -56,7 +56,6 @@ const { cart, totalBill, discount, finalAmount, decreaseQuantity, addToCart, cle
         </div>
       </div>
 
-      <!-- Summary Card -->
       <div
         class="bg-white dark:bg-zinc-800 p-4 sm:p-6 border border-zinc-100 dark:border-zinc-700 rounded-2xl shadow-sm flex flex-col justify-between h-max">
         <div>
