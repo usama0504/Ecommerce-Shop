@@ -4,7 +4,6 @@ import { useRouter } from 'vue-router'
 import { useAuth } from '../composables/useAuth'
 import { useShop } from '../composables/useShop' 
 
-// Ab signup aur login dono functional hain
 const { login, signup, authLoading, authError, isLoggedIn } = useAuth()
 const { executePendingAction } = useShop() 
 const router = useRouter()
@@ -20,14 +19,12 @@ const handleSubmit = async () => {
     successMessage.value = ''
     
     if (isLoginMode.value) {
-        // Login call
         const success = await login(email.value, password.value)
         if (success) {
             executePendingAction()
             router.push('/')
         }
     } else {
-        // Signup call (username, email, password teeno pass ho rahe hain)
         const success = await signup(username.value, email.value, password.value)
         if (success) {
             successMessage.value = '🎉 Account created successfully! Please sign in.'
@@ -48,7 +45,7 @@ const toggleMode = () => {
 </script>
 
 <template>
-    <div class="min-h-[70vh] max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] bg-[#F4F7F6] dark:bg-zinc-950 font-sans rounded-2xl overflow-hidden select-none my-6 border border-zinc-100 dark:border-zinc-900 shadow-sm">
+    <div class="min-h-[70vh] max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] bg-[#F4F7F6] dark:bg-zinc-950 font-sans rounded-2xl overflow-hidden select-none my-6 border border-zinc-100 dark:border-zinc-900 shadow-sm sm:mx-auto">
 
         <!-- LEFT SIDE: FORM -->
         <div class="flex flex-col items-center justify-center py-6 px-4 sm:px-8 bg-[#F4F7F6] dark:bg-zinc-950">
@@ -110,7 +107,7 @@ const toggleMode = () => {
 
                     <div v-if="isLoginMode" class="text-center pt-0.5"><a href="#" class="text-[10px] font-semibold text-zinc-400 hover:underline">Forgot Password?</a></div>
 
-                    <div class="text-center pt-2 border-t border-zinc-100 mt-1">
+                    <div class="text-center pt-2 border-t border-zinc-100 dark:border-zinc-800 mt-1">
                         <p class="text-xs text-zinc-500">
                             {{ isLoginMode ? "Don't have an account?" : "Already have an account?" }}
                             <button type="button" @click="toggleMode" class="font-bold text-[#00A991] hover:underline ml-0.5">
@@ -122,8 +119,8 @@ const toggleMode = () => {
             </div>
         </div>
 
-        <!-- RIGHT SIDE: IMAGE -->
-        <div class="hidden md:block relative h-full w-full bg-zinc-100 overflow-hidden">
+        <!-- RIGHT SIDE: IMAGE (Hidden on small, visible on md+) -->
+        <div class="hidden md:block relative h-full w-full bg-zinc-100 dark:bg-zinc-900 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1513094735237-8f2714d57c13?w=500&auto=format&fit=crop&q=60" alt="Bazaar" class="absolute inset-0 w-full h-full object-cover" />
         </div>
     </div>
