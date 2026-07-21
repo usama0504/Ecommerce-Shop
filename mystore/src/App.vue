@@ -37,7 +37,6 @@ const getInitialDarkMode = () => {
 
 const darkMode = ref(getInitialDarkMode())
 
-// Immediate DOM sync on load and change
 watch(darkMode, (newVal) => {
   localStorage.setItem('dark_mode', newVal)
   if (newVal) {
@@ -45,7 +44,7 @@ watch(darkMode, (newVal) => {
   } else {
     document.documentElement.classList.remove('dark')
   }
-}, { immediate: true })
+})
 
 onMounted(() => {
   loadFromStorage()

@@ -5,6 +5,15 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Store </title>
+    <script>
+  // Page load hone se fouri pehle check karein taake flicker/glitch na ho
+  if (localStorage.getItem('dark_mode') === 'true') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+</script>
+
   </head>
   <body>
     <div id="app"></div>
