@@ -21,6 +21,7 @@ const handleSubscribe = () => {
     <footer
         class="bg-white dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400 border-t border-zinc-100 dark:border-zinc-800 transition-colors duration-300">
 
+        <!-- Trust Badges Section -->
         <div class="max-w-7xl mx-auto px-4 md:px-8 py-6 sm:py-8 border-b border-zinc-100 dark:border-zinc-900">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 <div
@@ -62,9 +63,11 @@ const handleSubscribe = () => {
             </div>
         </div>
 
+        <!-- Main Footer Links Section -->
         <div class="max-w-7xl mx-auto px-4 md:px-8 py-10 sm:py-12">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10">
 
+                <!-- Brand Info & Socials -->
                 <div class="lg:col-span-2 space-y-4">
                     <div class="flex items-center gap-2">
                         <div
@@ -76,9 +79,9 @@ const handleSubscribe = () => {
                         Pakistan's leading social commerce platform clone. We empower local resellers and offer quality
                         products at wholesale prices directly to your doorstep.
                     </p>
-
+                    <!-- Social Icons -->
                     <div class="flex gap-3 pt-2">
-   
+                        <!-- Facebook Icon -->
                         <a href="https://facebook.com" target="_blank"
                             class="group w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:bg-[#1877F2] hover:border-[#1877F2] flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm">
                             <svg class="w-4 h-4 sm:w-5 sm:h-5 text-zinc-500 transition-colors duration-300 group-hover:text-white"
@@ -88,6 +91,7 @@ const handleSubscribe = () => {
                             </svg>
                         </a>
 
+                        <!-- Instagram Icon -->
                         <a href="https://instagram.com" target="_blank"
                             class="group w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:bg-[#d40248] hover:border-[#d40248] flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm">
                             <svg class="w-4 h-4 sm:w-5 sm:h-5 text-zinc-500 transition-colors duration-300 group-hover:text-white"
@@ -99,6 +103,7 @@ const handleSubscribe = () => {
                             </svg>
                         </a>
 
+                        <!-- YouTube Icon -->
                         <a href="https://youtube.com" target="_blank"
                             class="group w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:bg-[#FF0000] hover:border-[#FF0000] flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm">
                             <img src="https://img.icons8.com/ios-filled/50/6b7280/youtube-play.png"
@@ -108,6 +113,7 @@ const handleSubscribe = () => {
                     </div>
                 </div>
 
+                <!-- Quick Links -->
                 <div>
                     <h4
                         class="font-bold text-zinc-800 dark:text-zinc-200 mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wider">
@@ -124,6 +130,7 @@ const handleSubscribe = () => {
                     </ul>
                 </div>
 
+                <!-- Customer Care -->
                 <div>
                     <h4
                         class="font-bold text-zinc-800 dark:text-zinc-200 mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wider">
@@ -137,6 +144,7 @@ const handleSubscribe = () => {
                     </ul>
                 </div>
 
+                <!-- Newsletter -->
                 <div class="space-y-3 sm:space-y-4">
                     <h4 class="font-bold text-zinc-800 dark:text-zinc-200 text-xs sm:text-sm uppercase tracking-wider">
                         Newsletter
@@ -163,6 +171,7 @@ const handleSubscribe = () => {
             </div>
         </div>
 
+        <!-- Bottom Bar -->
         <div class="bg-zinc-50 dark:bg-zinc-950/80 border-t border-zinc-100 dark:border-zinc-900 py-5 sm:py-6">
             <div
                 class="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">

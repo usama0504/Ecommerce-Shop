@@ -23,6 +23,7 @@ const handleWishlistClick = () => {
   }
 }
 
+// Cart handle karne ke liye
 const handleCartClick = () => {
   handleSecureAction(props.product, 'cart', isLoggedIn.value)
 
@@ -43,12 +44,14 @@ const handleImageError = (e) => {
   <div
     class="bg-white dark:bg-zinc-800/90 border border-zinc-200/80 dark:border-zinc-700/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group relative h-full">
 
+    <!-- Wishlist Button -->
     <button @click="handleWishlistClick"
       class="absolute top-2 right-2 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-md p-1.5 rounded-full shadow-md hover:scale-110 active:scale-95 transition-all z-10 text-xs"
       aria-label="Wishlist">
       {{ isProductInWishlist(product.id) ? '❤️' : '🤍' }}
     </button>
 
+    <!-- 🌟 Discount Badge -->
     <span v-if="product.discount > 0"
       class="absolute top-2 left-2 bg-linear-to-r from-red-500 to-rose-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10 shadow-sm">
       {{ product.discount }}% OFF
@@ -56,6 +59,7 @@ const handleImageError = (e) => {
 
     <router-link :to="`/product/${product.id}`" class=" cursor-pointer flex-1 flex flex-col">
 
+      <!-- Product Image Container -->
       <div
         class="w-full h-32 sm:h-36 md:h-40 bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-center p-3 relative overflow-hidden">
         <img :src="product.image" :alt="product.name" @error="handleImageError"
@@ -66,6 +70,7 @@ const handleImageError = (e) => {
         </span>
       </div>
 
+      <!-- Product Info -->
       <div
         class="p-2.5 sm:p-3 border-t border-zinc-100 dark:border-zinc-700/50 space-y-1.5 flex-1 flex flex-col justify-between">
         <h3
@@ -73,6 +78,7 @@ const handleImageError = (e) => {
           {{ product.name }}
         </h3>
 
+        <!-- ⭐ Rating & Stock Info -->
         <div class="flex items-center justify-between text-[10px] sm:text-xs">
           <span
             class="text-amber-500 font-bold flex items-center gap-0.5 bg-amber-50 dark:bg-amber-500/10 px-1.5 py-0.5 rounded">
@@ -87,6 +93,7 @@ const handleImageError = (e) => {
       </div>
     </router-link>
 
+    <!-- Cart Button Section -->
     <div class="p-2.5 sm:p-3 pt-0">
       <button @click="handleCartClick" :disabled="product.stock <= 0" :class="[
         'w-full py-1.5 sm:py-2 rounded-xl text-xs font-bold transition-all duration-300 active:scale-98 shadow-sm',

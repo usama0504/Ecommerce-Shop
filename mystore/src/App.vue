@@ -53,6 +53,7 @@ onUnmounted(() => {
 <template>
   <div class="min-h-screen bg-[#FCFAF6] dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 transition-colors duration-300 overflow-x-hidden">
 
+    <!-- Top Info Bar -->
     <div class="bg-[#121212] w-full">
       <div class="text-white text-[11px] sm:text-xs py-2 px-4 max-w-7xl mx-auto flex justify-between items-center text-center">
         <span class="truncate">🚚 Lowest delivery price in Pakistan</span>
@@ -62,9 +63,11 @@ onUnmounted(() => {
       </div>
     </div>
 
+    <!-- Header Navbar -->
     <header class="bg-white dark:bg-zinc-800 border-b border-zinc-200 dark:border-zinc-700 sticky top-0 z-50 py-3 px-3 sm:px-6 shadow-sm">
       <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-3 lg:gap-4">
-     
+        
+        <!-- Top / Main Row for Mobile, Single Line for Large Screens -->
         <div class="flex items-center justify-between w-full lg:w-auto gap-3">
           <!-- Logo -->
           <router-link to="/" class="flex items-center gap-2 cursor-pointer shrink-0">
@@ -72,6 +75,7 @@ onUnmounted(() => {
             <span class="text-xl sm:text-2xl font-black text-[#00A991]">MyStore</span>
           </router-link>
 
+          <!-- Mobile Quick Actions (Visible only on mobile/tablet next to logo) -->
           <div class="flex items-center gap-2 lg:hidden">
             <button @click="darkMode = !darkMode" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-700 rounded-full text-sm">
               {{ darkMode ? '☀️' : '🌙' }}
@@ -94,6 +98,7 @@ onUnmounted(() => {
           <button class="bg-[#00A991] hover:bg-[#008f7b] text-white px-4 sm:px-6 py-2 rounded-r-full text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap">Search</button>
         </div>
 
+        <!-- Desktop Actions (Strictly Single Line on Large Screens `lg:flex`) -->
         <div class="hidden lg:flex items-center gap-4 xl:gap-5 text-sm font-medium shrink-0">
           <button @click="darkMode = !darkMode" class="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 rounded-full transition" title="Toggle Theme">
             {{ darkMode ? '☀️' : '🌙' }}
@@ -119,6 +124,7 @@ onUnmounted(() => {
           <router-link v-else to="/login" class="text-xs font-bold px-4 py-2 bg-[#00A991] text-white hover:bg-[#008f7b] rounded-lg shadow-sm whitespace-nowrap">Login</router-link>
         </div>
 
+        <!-- Mobile Bottom Nav Bar (Only for mobile/tablet screens) -->
         <div class="flex lg:hidden w-full items-center justify-around pt-2 border-t border-zinc-100 dark:border-zinc-700 text-xs font-medium">
           <router-link to="/orders" class="hover:text-[#00A991] py-1">📦 Orders</router-link>
           <router-link to="/wishlist" class="hover:text-[#00A991] py-1">❤️ Wishlist <span class="bg-[#00A991] text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">{{ wishlist.length }}</span></router-link>
@@ -128,6 +134,7 @@ onUnmounted(() => {
       </div>
     </header>
 
+    <!-- Main Content Area -->
     <main class="max-w-7xl mx-auto px-3 sm:px-4 md:px-8 py-4 sm:py-6">
       <router-view />
       <CartDrawer />
