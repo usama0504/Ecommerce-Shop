@@ -25,8 +25,19 @@ const shop = useShop()
 const { wishlist, cart, searchInput, loadFromStorage } = shop
 const { openCart } = useDrawer()
 
-const darkMode = ref(localStorage.getItem('dark_mode') === 'true')
+// Safe Initialization to avoid flickering/glitch
+const getInitialDarkMode = () => {
+  const stored = localStorage.getItem('dark_mode')
+  if (stored !== null) {
+    return stored === 'true'
+  }
+  // Fallback to system preference if nothing saved
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+}
 
+const darkMode = ref(getInitialDarkMode())
+
+// Immediate DOM sync on load and change
 watch(darkMode, (newVal) => {
   localStorage.setItem('dark_mode', newVal)
   if (newVal) {
@@ -64,7 +75,7 @@ onUnmounted(() => {
     </div>
 
     <!-- Header Navbar -->
-    <header class="bg-white dark:bg-zinc-800 border-b border-zinc-200 dark:border-zinc-700 sticky top-0 z-50 py-3 px-3 sm:px-6 shadow-sm">
+    <header class="bg-white dark:bg-zinc-800 border-b border-zinc-200 dark:border-zinc-700 sticky top-0 z-50 py-3 px-3 sm:px-6 shadow-sm transition-colors duration-300">
       <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-3 lg:gap-4">
         
         <!-- Top / Main Row for Mobile, Single Line for Large Screens -->
@@ -77,7 +88,7 @@ onUnmounted(() => {
 
           <!-- Mobile Quick Actions (Visible only on mobile/tablet next to logo) -->
           <div class="flex items-center gap-2 lg:hidden">
-            <button @click="darkMode = !darkMode" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-700 rounded-full text-sm">
+            <button @click="darkMode = !darkMode" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-700 rounded-full text-sm transition">
               {{ darkMode ? '☀️' : '🌙' }}
             </button>
             <button 
@@ -91,14 +102,14 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <!-- Search Bar (Flexible width, centers nicely on large screens) -->
+        <!-- Search Bar -->
         <div class="flex-1 w-full lg:max-w-xl flex">
           <input type="text" placeholder="Search products, brands & stores..." v-model="searchInput"
             class="w-full px-4 py-2 bg-zinc-50 dark:bg-zinc-700 border border-zinc-200 dark:border-zinc-600 rounded-l-full focus:outline-none focus:ring-1 focus:ring-[#00A991] dark:text-white text-xs sm:text-sm" />
           <button class="bg-[#00A991] hover:bg-[#008f7b] text-white px-4 sm:px-6 py-2 rounded-r-full text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap">Search</button>
         </div>
 
-        <!-- Desktop Actions (Strictly Single Line on Large Screens `lg:flex`) -->
+        <!-- Desktop Actions -->
         <div class="hidden lg:flex items-center gap-4 xl:gap-5 text-sm font-medium shrink-0">
           <button @click="darkMode = !darkMode" class="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 rounded-full transition" title="Toggle Theme">
             {{ darkMode ? '☀️' : '🌙' }}
@@ -124,7 +135,7 @@ onUnmounted(() => {
           <router-link v-else to="/login" class="text-xs font-bold px-4 py-2 bg-[#00A991] text-white hover:bg-[#008f7b] rounded-lg shadow-sm whitespace-nowrap">Login</router-link>
         </div>
 
-        <!-- Mobile Bottom Nav Bar (Only for mobile/tablet screens) -->
+        <!-- Mobile Bottom Nav Bar -->
         <div class="flex lg:hidden w-full items-center justify-around pt-2 border-t border-zinc-100 dark:border-zinc-700 text-xs font-medium">
           <router-link to="/orders" class="hover:text-[#00A991] py-1">📦 Orders</router-link>
           <router-link to="/wishlist" class="hover:text-[#00A991] py-1">❤️ Wishlist <span class="bg-[#00A991] text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">{{ wishlist.length }}</span></router-link>
