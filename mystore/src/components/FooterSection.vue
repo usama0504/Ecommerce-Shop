@@ -144,7 +144,6 @@ const handleSubscribe = () => {
                     </ul>
                 </div>
 
-                <!-- Newsletter -->
                 <div class="space-y-3 sm:space-y-4">
                     <h4 class="font-bold text-zinc-800 dark:text-zinc-200 text-xs sm:text-sm uppercase tracking-wider">
                         Newsletter
@@ -152,7 +151,6 @@ const handleSubscribe = () => {
                     <p class="text-xs sm:text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
                         Subscribe to get notified about flash sales and new arrivals!
                     </p>
-
                     <form @submit.prevent="handleSubscribe" class="space-y-2">
                         <div class="relative">
                             <input type="email" placeholder="Email Address" v-model="emailInput" required

@@ -19,7 +19,7 @@ const handleCheckout = () => {
 
 <template>
     <div>
-        <!-- Backdrop -->
+  
         <div v-if="isCartOpen" @click="closeCart"
             class="fixed inset-0 bg-black/50 z-998 transition-opacity duration-300"></div>
 

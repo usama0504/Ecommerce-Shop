@@ -14,8 +14,7 @@
         </h1>
         <p class="text-xs sm:text-sm text-zinc-200">Shop trusted Pakistani sellers — cash on delivery & easy returns.</p>
       </div>
-      
-      <!-- Decorative element -->
+    
       <div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full border border-white/10 pointer-events-none"></div>
     </div>
 

@@ -5,7 +5,6 @@ const { selectedCategory } = useShop()
 // Define the custom event we will trigger
 const emit = defineEmits(['trigger-see-all'])
 
-// Map category response names to stylish icons
 const categoriesData = [
   { name: 'All', icon: '🛍️' },
   { name: 'Electronics', icon: '💻' },

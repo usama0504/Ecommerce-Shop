@@ -11,7 +11,6 @@ const router = useRouter()
 const { isLoggedIn } = useAuth()
 const { isProductInWishlist, handleSecureAction } = useShop()
 
-// Wishlist handle karne ke liye
 const handleWishlistClick = () => {
   handleSecureAction(props.product, 'wishlist', isLoggedIn.value)
 

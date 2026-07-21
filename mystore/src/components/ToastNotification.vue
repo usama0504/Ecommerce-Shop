@@ -24,7 +24,6 @@ const { toasts, removeToast } = useToast()
                         : 'bg-amber-50/95 dark:bg-amber-950/90 border-amber-200/80 dark:border-amber-800/60 text-amber-700 dark:text-amber-300 shadow-amber-500/5'
                 ]">
                 
-                <!-- Icon and Message -->
                 <div class="flex items-center gap-2.5 min-w-0">
                     <span class="text-base sm:text-lg shrink-0">
                         {{ toast.type === 'success' ? '✅' : '⚠️' }}
