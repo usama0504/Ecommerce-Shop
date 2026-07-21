@@ -7,7 +7,7 @@ import OrderView from '@/views/OrderView.vue'
 import ProductDetailView from '@/views/ProductDetailView.vue'
 import WishlistView from '@/views/WishlistView.vue'
 
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 
 const routes = [
@@ -21,7 +21,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory('/Ecommerce-Shop/'),
+    history: createWebHashHistory('/Ecommerce-Shop/'),
     routes
 })
 
