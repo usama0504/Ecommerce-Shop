@@ -21,7 +21,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHashHistory('/Ecommerce-Shop/'),
+    history: createWebHashHistory(),
     routes
 })
 
